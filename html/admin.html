@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - RICKOTECA</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <img src="imagem/icon/logo.png" alt="RICKOTECA Logo" class="logo-img">
+            <h1 class="site-name">RICKOTECA - Admin</h1>
+        </div>
+        <nav class="header-right">
+            <a href="../index.html" class="nav-link">Home</a>
+            <a href="#" class="nav-link active">Admin</a>
+            <button id="logoutBtn" class="nav-link logout-btn">Sair</button>
+        </nav>
+    </header>
+
+    <!-- Login Screen -->
+    <div id="loginScreen" class="admin-login-screen">
+        <div class="admin-login-card">
+            <h2 class="admin-login-title">Acesso Administrativo</h2>
+            <p class="admin-login-subtitle">Digite suas credenciais para acessar o painel</p>
+            <form id="adminLoginForm" class="admin-login-form">
+                <div class="form-group">
+                    <label for="adminUsername">Usuário</label>
+                    <input type="text" id="adminUsername" required placeholder="Digite o usuário">
+                </div>
+                <div class="form-group">
+                    <label for="adminPassword">Senha</label>
+                    <input type="password" id="adminPassword" required placeholder="Digite a senha">
+                </div>
+                <button type="submit" class="submit-btn">Entrar</button>
+                <p class="admin-hint">Dica: usuário: admin / senha: admin123</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminDashboard" class="admin-dashboard" style="display: none;">
+        
+        <!-- Statistics Cards -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div class="stat-info">
+                    <h3 class="stat-number" id="totalBooks">0</h3>
+                    <p class="stat-label">Total de Livros</p>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-info">
+                    <h3 class="stat-number" id="totalUsers">0</h3>
+                    <p class="stat-label">Usuários Cadastrados</p>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">❤️</div>
+                <div class="stat-info">
+                    <h3 class="stat-number" id="totalLikes">0</h3>
+                    <p class="stat-label">Total de Curtidas</p>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-info">
+                    <h3 class="stat-number" id="totalRatings">0</h3>
+                    <p class="stat-label">Total de Avaliações</p>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">💬</div>
+                <div class="stat-info">
+                    <h3 class="stat-number" id="totalComments">0</h3>
+                    <p class="stat-label">Total de Comentários</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="admin-tabs">
+            <button class="admin-tab active" data-tab="users">Usuários Cadastrados</button>
+            <button class="admin-tab" data-tab="comments">Gerenciar Comentários</button>
+            <button class="admin-tab" data-tab="stats">Estatísticas Detalhadas</button>
+        </div>
+
+        <!-- Users Tab -->
+        <div id="usersTab" class="admin-tab-content active">
+            <div class="admin-section">
+                <div class="section-header">
+                    <h2 class="section-title">Usuários Cadastrados</h2>
+                    <button id="exportUsersBtn" class="action-btn">Exportar CSV</button>
+                </div>
+                <div class="search-filter">
+                    <input type="text" id="userSearch" class="search-input" placeholder="Buscar usuário por nome ou email...">
+                </div>
+                <div class="users-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Telefone</th>
+                                <th>Data de Cadastro</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTableBody">
+                            <tr>
+                                <td colspan="5" class="no-data">Nenhum usuário cadastrado ainda</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comments Tab -->
+        <div id="commentsTab" class="admin-tab-content">
+            <div class="admin-section">
+                <div class="section-header">
+                    <h2 class="section-title">Gerenciar Comentários</h2>
+                    <button id="clearAllCommentsBtn" class="action-btn danger">Limpar Todos</button>
+                </div>
+                <div class="search-filter">
+                    <input type="text" id="commentSearch" class="search-input" placeholder="Buscar comentário...">
+                </div>
+                <div id="commentsAdminList" class="comments-admin-list">
+                    <p class="no-data">Nenhum comentário encontrado</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Tab -->
+        <div id="statsTab" class="admin-tab-content">
+            <div class="admin-section">
+                <h2 class="section-title">Estatísticas Detalhadas</h2>
+                
+                <div class="stats-details">
+                    <div class="stats-card">
+                        <h3>Livros Mais Curtidos</h3>
+                        <div id="topLikedBooks" class="stats-list"></div>
+                    </div>
+                    
+                    <div class="stats-card">
+                        <h3>Livros Mais Avaliados</h3>
+                        <div id="topRatedBooks" class="stats-list"></div>
+                    </div>
+                    
+                    <div class="stats-card">
+                        <h3>Livros Mais Comentados</h3>
+                        <div id="topCommentedBooks" class="stats-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/admin.js"></script>
+    <!-- Adicionando script de acessibilidade -->
+    <script src="../js/accessibility.js"></script>
+</body>
+</html>

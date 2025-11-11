@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RICKOTECA - Biblioteca Digital</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Canvas para partículas de fundo -->
+    <canvas id="particlesCanvas" class="particles-canvas"></canvas>
+ 
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <img src="imagem/icon/logo.png" alt="RICKOTECA Logo" class="logo-img">
+            <h1 class="site-name">RICKOTECA</h1>
+        </div>
+        <nav class="header-right">
+            <a href="#" class="nav-link active" data-page="home">Home</a>
+            <a href="#" class="nav-link" data-page="sobre">Sobre</a>
+            <a href="#" class="nav-link" data-page="contato">Contato</a>
+            <a href="html/cadastro.html" class="nav-link">Cadastro</a>
+            
+            <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">🌞</button>
+
+        </nav>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar livros...">
+        <button class="search-btn">🔍</button>
+    </div>
+
+    <!-- GÊNEROS DE LIVRO -->
+    <div class="category-bar">
+        <button class="category-btn active" data-category="todos" data-animation="default">Todos</button>
+        <button class="category-btn" data-category="biblicos" data-animation="holy">Bíblicos</button>
+        <button class="category-btn" data-category="minecraft" data-animation="gaming">Minecraft</button>
+        <button class="category-btn" data-category="mangas" data-animation="manga">Mangás</button>
+        <button class="category-btn" data-category="esportes" data-animation="sports">Esportes</button>
+        <button class="category-btn" data-category="social" data-animation="default">Social</button>
+        <button class="category-btn" data-category="programação" data-animation="default">Programação</button>
+        <!-- ADICIONE MAIS CATEGORIAS AQUI -->
+    </div>
+
+    <!-- Books Grid -->
+    <main class="books-container" id="booksContainer">
+        
+        <!-- LIVRO  -->
+        <div class="book-card" data-category="biblicos" 
+             data-book-id="biblia-sagrada"
+             data-title="A Bíblia Sagrada"
+             data-author="Vários Autores"
+             data-description="A palavra de Deus completa, contendo o Antigo e Novo Testamento."
+             data-cover="imagem/biblico/biblia.jpg"
+             data-download="html/livros/biblico/biblia.html">
+            <img src="imagem/biblico/biblia.jpg" alt="A Bíblia Sagrada" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">A Bíblia Sagrada</h3>
+                <p class="book-author">Vários Autores</p>
+                <p class="book-description">A palavra de Deus completa, contendo o Antigo e Novo Testamento.</p>
+                <!-- Sistema de curtidas e avaliação -->
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="biblia-sagrada">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card" data-category="esportes" 
+             data-book-id="ayrton-senna-uma-lenda-a-toda-velocidade-christopher-hilton"
+             data-title="Ayrton Senna: Uma lenda a toda velocidade"
+             data-author="Christopher Hilton"
+             data-description="Um guia completo sobre design de minecraft e mecânicas de gameplay."
+             data-cover="imagem/esporte/senna.jpg"
+             data-download="https://exemplo.com/download/game-design.pdf">
+            <img src="imagem/esporte/senna.jpg" alt="Ayrton Senna: Uma lenda a toda velocidade" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Ayrton Senna: Uma lenda a toda velocidade</h3>
+                <p class="book-author">Christopher Hilton</p>
+                <p class="book-description">Biografia do tricampeão, das vitórias nas pistas ao legado no esporte.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="ayrton-senna-uma-lenda-a-toda-velocidade-christopher-hilton">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card" data-category="mangas" 
+             data-book-id="naruto-vol1"
+             data-title="Naruto Vol. 1"
+             data-author="Masashi Kishimoto"
+             data-description="A história de um jovem ninja que sonha em se tornar Hokage."
+             data-cover="https://images.unsplash.com/photo-1612178537253-bccd437b730e?w=400"
+             data-download="https://exemplo.com/download/naruto.pdf">
+            <img src="https://m.media-amazon.com/images/I/91xUwI2UEVL._AC_SY741_.jpg" alt="Naruto Vol. 1" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Naruto Vol. 1</h3>
+                <p class="book-author">Masashi Kishimoto</p>
+                <p class="book-description">A história de um jovem ninja que sonha em se tornar Hokage.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="naruto-vol1">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card" data-category="programação" 
+     data-book-id="entendendo-algoritmos-aditya-bhargava"
+     data-title="Entendendo Algoritmos"
+     data-author="Aditya Bhargava"
+     data-description=""
+     data-cover="imagem/programacao/algoritimo.jpg"
+     data-download="">
+    <img src="imagem/programacao/algoritimo.jpg" alt="Entendendo Algoritmos" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Entendendo Algoritmos</h3>
+        <p class="book-author">Aditya Bhargava</p>
+        <p class="book-description">Algoritmos essenciais explicados de forma simples e ilustrada.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="entendendo-algoritmos-aditya-bhargava">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="mangas" 
+     data-book-id="the-seven-deadly-sins-volume-1-nakaba-suzuki"
+     data-title="The Seven Deadly Sins Volume 1"
+     data-author="Nakaba Suzuki"
+     data-description=""
+     data-cover="imagem/mangar/sevey.jpg"
+     data-download="">
+    <img src="imagem/mangar/sevey.jpg" alt="The Seven Deadly Sins Volume 1" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">The Seven Deadly Sins Volume 1</h3>
+        <p class="book-author">Nakaba Suzuki</p>
+        <p class="book-description">Meliodas e os Pecados Capitais iniciam uma aventura para salvar o reino.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="the-seven-deadly-sins-volume-1-nakaba-suzuki">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="mangas" 
+     data-book-id="dragon-ball-super-volume-1-akira-toriyama"
+     data-title="Dragon Ball Super Volume 1"
+     data-author="Akira Toriyama"
+     data-description=""
+     data-cover="imagem/mangar/goku.jpg"
+     data-download="">
+    <img src="imagem/mangar/goku.jpg" alt="Dragon Ball Super Volume 1" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Dragon Ball Super Volume 1</h3>
+        <p class="book-author">Akira Toriyama</p>
+        <p class="book-description">Goku e amigos encaram novos desafios após a paz trazida por Majin Boo.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="dragon-ball-super-volume-1-akira-toriyama">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="mangas" 
+     data-book-id="demon-slayer-volume-1-koyoharu-gotouge"
+     data-title="Demon Slayer Volume 1"
+     data-author="Koyoharu Gotouge"
+     data-description=""
+     data-cover="imagem/mangar/yaiba.jpg"
+     data-download="">
+    <img src="imagem/mangar/yaiba.jpg" alt="Demon Slayer Volume 1" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Demon Slayer Volume 1</h3>
+        <p class="book-author">Koyoharu Gotouge</p>
+        <p class="book-description">Tanjiro torna-se caçador de demônios para proteger e curar sua irmã.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="demon-slayer-volume-1-koyoharu-gotouge">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="mangas" 
+     data-book-id="death-note-volume-1-tsugumi-ohba"
+     data-title="Death Note Volume 1"
+     data-author="Tsugumi Ohba"
+     data-description=""
+     data-cover="imagem/mangar/note.jpg"
+     data-download="">
+    <img src="imagem/mangar/note.jpg" alt="Death Note Volume 1" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Death Note Volume 1</h3>
+        <p class="book-author">Tsugumi Ohba</p>
+        <p class="book-description">Light encontra um caderno mortal e inicia um jogo de inteligência com L.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="death-note-volume-1-tsugumi-ohba">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="mangas" 
+     data-book-id="black-clover-volume-1-yuki-tabata"
+     data-title="Black Clover Volume 1"
+     data-author="Yūki Tabata"
+     data-description=""
+     data-cover="imagem/mangar/black.jpg"
+     data-download="">
+    <img src="imagem/mangar/black.jpg" alt="Black Clover Volume 1" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Black Clover Volume 1</h3>
+        <p class="book-author">Yūki Tabata</p>
+        <p class="book-description">Sem magia, Asta luta para provar seu valor e sonha ser Rei Mago.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="black-clover-volume-1-yuki-tabata">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="biblicos" 
+     data-book-id="biblia-em-acao-ampliada-sergio-cariello"
+     data-title="Bíblia em Ação (Ampliada)"
+     data-author="Sérgio Cariello"
+     data-description=""
+     data-cover="imagem/biblico/acao.jpg"
+     data-download="">
+    <img src="imagem/biblico/acao.jpg" alt="Bíblia em Ação (Ampliada)" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Bíblia em Ação (Ampliada)</h3>
+        <p class="book-author">Sérgio Cariello</p>
+        <p class="book-description">A Bíblia em formato HQ, com ilustrações dinâmicas e leitura fluida.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="biblia-em-acao-ampliada-sergio-cariello">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="biblicos" 
+     data-book-id="a-dor-da-lideranca-samuel-r-chand"
+     data-title="A Dor da Liderança"
+     data-author="Samuel R. Chand"
+     data-description=""
+     data-cover="imagem/biblico/ador.jpg"
+     data-download="">
+    <img src="imagem/biblico/ador.jpg" alt="A Dor da Liderança" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">A Dor da Liderança</h3>
+        <p class="book-author">Samuel R. Chand</p>
+        <p class="book-description">Reflexões sobre os desafios que moldam o caráter e a resiliência do líder.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="a-dor-da-lideranca-samuel-r-chand">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="biblicos" 
+     data-book-id="especialista-em-pessoas-tiago-brunet"
+     data-title="Especialista em Pessoas"
+     data-author="Tiago Brunet"
+     data-description=""
+     data-cover="imagem/biblico/especialistaempss.jpg"
+     data-download="">
+    <img src="imagem/biblico/especialistaempss.jpg" alt="Especialista em Pessoas" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Especialista em Pessoas</h3>
+        <p class="book-author">Tiago Brunet</p>
+        <p class="book-description">Lições práticas para entender perfis, comunicar melhor e liderar com propósito.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="especialista-em-pessoas-tiago-brunet">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="biblicos" 
+     data-book-id="o-poder-do-carater-na-lideranca-myles-munroe"
+     data-title="O Poder do Caráter na Liderança"
+     data-author="Myles Munroe"
+     data-description=""
+     data-cover="imagem/biblico/opoderld.jpg"
+     data-download="">
+    <img src="imagem/biblico/opoderld.jpg" alt="O Poder do Caráter na Liderança" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">O Poder do Caráter na Liderança</h3>
+        <p class="book-author">Myles Munroe</p>
+        <p class="book-description">Como um caráter sólido sustenta decisões, influência e resultados sustentáveis.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="o-poder-do-carater-na-lideranca-myles-munroe">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="biblicos" 
+     data-book-id="vitoria-pelo-sangue-cesar-castellanos"
+     data-title="Vitória pelo Sangue"
+     data-author="César Castellanos"
+     data-description=""
+     data-cover="imagem/biblico/vitoriasangue.jpg"
+     data-download="">
+    <img src="imagem/biblico/vitoriasangue.jpg" alt="Vitória pelo Sangue" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Vitória pelo Sangue</h3>
+        <p class="book-author">César Castellanos</p>
+        <p class="book-description">Estudo sobre o poder redentor do sangue de Jesus na vida cristã.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="vitoria-pelo-sangue-cesar-castellanos">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="social" 
+     data-book-id="capitalismo-monopolista-e-servico-social-jose-paulo-netto"
+     data-title="Capitalismo Monopolista e Serviço Social"
+     data-author="José Paulo Netto"
+     data-description=""
+     data-cover="imagem/social/capitalismo.png"
+     data-download="">
+    <img src="imagem/social/capitalismo.png" alt="Capitalismo Monopolista e Serviço Social" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Capitalismo Monopolista e Serviço Social</h3>
+        <p class="book-author">José Paulo Netto</p>
+        <p class="book-description">Análise crítica das relações entre capital e a prática do serviço social.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="capitalismo-monopolista-e-servico-social-jose-paulo-netto">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="social" 
+     data-book-id="ditadura-e-servico-social-jose-paulo-netto"
+     data-title="Ditadura e Serviço Social"
+     data-author="José Paulo Netto"
+     data-description=""
+     data-cover="imagem/social/ditadura.jpg"
+     data-download="">
+    <img src="imagem/social/ditadura.jpg" alt="Ditadura e Serviço Social" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Ditadura e Serviço Social</h3>
+        <p class="book-author">José Paulo Netto</p>
+        <p class="book-description">Como o período autoritário impactou a profissão e as políticas sociais no Brasil.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="ditadura-e-servico-social-jose-paulo-netto">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="social" 
+     data-book-id="etica-e-servico-social-maria-lucia-silva-barroco"
+     data-title="Ética e Serviço Social"
+     data-author="Maria Lúcia Silva Barroco"
+     data-description=""
+     data-cover="imagem/social/etica.jpg"
+     data-download="">
+    <img src="imagem/social/etica.jpg" alt="Ética e Serviço Social" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Ética e Serviço Social</h3>
+        <p class="book-author">Maria Lúcia Silva Barroco</p>
+        <p class="book-description">Fundamentos éticos que orientam o exercício profissional no SUAS.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="etica-e-servico-social-maria-lucia-silva-barroco">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="social" 
+     data-book-id="servico-social-em-tempo-de-capital-fetiche-marilda-villela-iamamoto"
+     data-title="Serviço Social em Tempo de Capital Fetiche"
+     data-author="Marilda Villela Iamamoto"
+     data-description=""
+     data-cover="imagem/social/marvilv.jpg"
+     data-download="">
+    <img src="imagem/social/marvilv.jpg" alt="Serviço Social em Tempo de Capital Fetiche" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Serviço Social em Tempo de Capital Fetiche</h3>
+        <p class="book-author">Marilda Villela Iamamoto</p>
+        <p class="book-description">Debate sobre trabalho, reprodução social e desafios contemporâneos da profissão.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="servico-social-em-tempo-de-capital-fetiche-marilda-villela-iamamoto">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="social" 
+     data-book-id="relacoes-sociais-e-servico-social-no-brasil-marilda-villela-iamamoto"
+     data-title="Relações Sociais e Serviço Social no Brasil"
+     data-author="Marilda Villela Iamamoto"
+     data-description=""
+     data-cover="imagem/social/relacoes.png"
+     data-download="">
+    <img src="imagem/social/relacoes.png" alt="Relações Sociais e Serviço Social no Brasil" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Relações Sociais e Serviço Social no Brasil</h3>
+        <p class="book-author">Marilda Villela Iamamoto</p>
+        <p class="book-description">Clássico que discute a formação histórica do serviço social no país.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="relacoes-sociais-e-servico-social-no-brasil-marilda-villela-iamamoto">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="social" 
+     data-book-id="o-servico-social-cristiane-tomaz"
+     data-title="O Serviço Social"
+     data-author="Cristiane Tomaz"
+     data-description=""
+     data-cover="imagem/social/social.png"
+     data-download="">
+    <img src="imagem/social/social.png" alt="O Serviço Social" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">O Serviço Social</h3>
+        <p class="book-author">Cristiane Tomaz</p>
+        <p class="book-description">Síntese didática de conceitos, métodos e campos de atuação profissional.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="o-servico-social-cristiane-tomaz">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="esportes" 
+     data-book-id="cristiano-ronaldo-e-o-melhor-simon-mugford-dan-green"
+     data-title="Cristiano Ronaldo: É o Melhor"
+     data-author="Simon Mugford; Dan Green"
+     data-description=""
+     data-cover="imagem/esporte/cr7.jpg"
+     data-download="">
+    <img src="imagem/esporte/cr7.jpg" alt="Cristiano Ronaldo: É o Melhor" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Cristiano Ronaldo: É o Melhor</h3>
+        <p class="book-author">Simon Mugford; Dan Green</p>
+        <p class="book-description">A trajetória do craque português rumo ao topo do futebol mundial.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="cristiano-ronaldo-e-o-melhor-simon-mugford-dan-green">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="esportes" 
+     data-book-id="messi-o-genio-completo-ariel-senosiain"
+     data-title="Messi: O Gênio Completo"
+     data-author="Ariel Senosiain"
+     data-description=""
+     data-cover="imagem/esporte/messi.jpg"
+     data-download="">
+    <img src="imagem/esporte/messi.jpg" alt="Messi: O Gênio Completo" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Messi: O Gênio Completo</h3>
+        <p class="book-author">Ariel Senosiain</p>
+        <p class="book-description">A história do gênio argentino e seus momentos inesquecíveis.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="messi-o-genio-completo-ariel-senosiain">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="esportes" 
+     data-book-id="nunca-deixe-de-tentar-michael-jordan"
+     data-title="Nunca Deixe de Tentar"
+     data-author="Michael Jordan"
+     data-description=""
+     data-cover="imagem/esporte/ndeixe.jpg"
+     data-download="">
+    <img src="imagem/esporte/ndeixe.jpg" alt="Nunca Deixe de Tentar" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Nunca Deixe de Tentar</h3>
+        <p class="book-author">Michael Jordan</p>
+        <p class="book-description">Lições de persistência e mentalidade vencedora a partir de Michael Jordan.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="nunca-deixe-de-tentar-michael-jordan">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="esportes" 
+     data-book-id="nunca-e-hora-de-parar-david-goggins"
+     data-title="Nunca é Hora de Parar"
+     data-author="David Goggins"
+     data-description=""
+     data-cover="imagem/esporte/hora.jpg"
+     data-download="">
+    <img src="imagem/esporte/hora.jpg" alt="Nunca é Hora de Parar" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Nunca é Hora de Parar</h3>
+        <p class="book-author">David Goggins</p>
+        <p class="book-description">Motivação e disciplina para superar limites e transformar a vida.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="nunca-e-hora-de-parar-david-goggins">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="esportes" 
+     data-book-id="hipertrofia-muscular-ciencia-e-pratica-brad-schoenfeld"
+     data-title="Hipertrofia Muscular: Ciência e Prática"
+     data-author="Brad Schoenfeld"
+     data-description=""
+     data-cover="imagem/esporte/forca.jpg"
+     data-download="">
+    <img src="imagem/esporte/forca.jpg" alt="Hipertrofia Muscular: Ciência e Prática" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Hipertrofia Muscular: Ciência e Prática</h3>
+        <p class="book-author">Brad Schoenfeld</p>
+        <p class="book-description">Treino e nutrição baseados em evidências para ganhar massa muscular.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="hipertrofia-muscular-ciencia-e-pratica-brad-schoenfeld">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="minecraft" 
+     data-book-id="tazercraft-uma-aventura-chume-labs-pac-mike-gustavo-magnani"
+     data-title="TazerCraft: Uma Aventura Chume Labs"
+     data-author="Pac; Mike; Gustavo Magnani"
+     data-description=""
+     data-cover="imagem/minecraft/chume.jpg"
+     data-download="">
+    <img src="imagem/minecraft/chume.jpg" alt="TazerCraft: Uma Aventura Chume Labs" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">TazerCraft: Uma Aventura Chume Labs</h3>
+        <p class="book-author">Pac; Mike; Gustavo Magnani</p>
+        <p class="book-description">Aventura no universo de Minecraft com os criadores Pac e Mike.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="tazercraft-uma-aventura-chume-labs-pac-mike-gustavo-magnani">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="minecraft" 
+     data-book-id="dois-mundos-um-heroi-rezendeevil"
+     data-title="Dois Mundos, Um Herói"
+     data-author="Rezendeevil"
+     data-description=""
+     data-cover="imagem/minecraft/vil.jpg"
+     data-download="">
+    <img src="imagem/minecraft/vil.jpg" alt="Dois Mundos, Um Herói" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Dois Mundos, Um Herói</h3>
+        <p class="book-author">Rezendeevil</p>
+        <p class="book-description">Fantasia gamer com desafios que cruzam o virtual e o real.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="dois-mundos-um-heroi-rezendeevil">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="minecraft" 
+     data-book-id="a-batalha-contra-herobrine-authentic-games"
+     data-title="A Batalha contra Herobrine"
+     data-author="Authentic Games"
+     data-description=""
+     data-cover="imagem/minecraft/alto.jpg"
+     data-download="">
+    <img src="imagem/minecraft/alto.jpg" alt="A Batalha contra Herobrine" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">A Batalha contra Herobrine</h3>
+        <p class="book-author">Authentic Games</p>
+        <p class="book-description">Conflito épico no mundo de Minecraft contra o lendário Herobrine.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="a-batalha-contra-herobrine-authentic-games">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="minecraft" 
+     data-book-id="minecraft-guia-do-explorador-mojang-ab"
+     data-title="Minecraft: Guia do Explorador"
+     data-author="Mojang AB"
+     data-description=""
+     data-cover="imagem/minecraft/machado.jpg"
+     data-download="">
+    <img src="imagem/minecraft/machado.jpg" alt="Minecraft: Guia do Explorador" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Minecraft: Guia do Explorador</h3>
+        <p class="book-author">Mojang AB</p>
+        <p class="book-description">Dicas para explorar biomas, estruturas e recursos com segurança.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="minecraft-guia-do-explorador-mojang-ab">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="minecraft" 
+     data-book-id="o-misterio-de-herobrine-uma-aventura-cara-j-stevens"
+     data-title="O Mistério de Herobrine: Uma Aventura"
+     data-author="Cara J. Stevens"
+     data-description=""
+     data-cover="imagem/minecraft/misterio.jpg"
+     data-download="">
+    <img src="imagem/minecraft/misterio.jpg" alt="O Mistério de Herobrine: Uma Aventura" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">O Mistério de Herobrine: Uma Aventura</h3>
+        <p class="book-author">Cara J. Stevens</p>
+        <p class="book-description">Investigação no universo Minecraft envolvendo o enigmático Herobrine.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="o-misterio-de-herobrine-uma-aventura-cara-j-stevens">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="minecraft" 
+     data-book-id="minecraft-guia-de-sobrevivencia-mojang-ab"
+     data-title="Minecraft: Guia de Sobrevivência"
+     data-author="Mojang AB"
+     data-description=""
+     data-cover="imagem/minecraft/picareta.jpg"
+     data-download="">
+    <img src="imagem/minecraft/picareta.jpg" alt="Minecraft: Guia de Sobrevivência" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Minecraft: Guia de Sobrevivência</h3>
+        <p class="book-author">Mojang AB</p>
+        <p class="book-description">Passo a passo para iniciar, coletar e sobreviver no jogo.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="minecraft-guia-de-sobrevivencia-mojang-ab">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="programação" 
+     data-book-id="meu-primeiro-livro-de-programacao-nestor-burlamaqui"
+     data-title="Meu Primeiro Livro de Programação"
+     data-author="Nestor Burlamaqui"
+     data-description=""
+     data-cover="imagem/programacao/primeirocd.png"
+     data-download="">
+    <img src="imagem/programacao/primeirocd.png" alt="Meu Primeiro Livro de Programação" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Meu Primeiro Livro de Programação</h3>
+        <p class="book-author">Nestor Burlamaqui</p>
+        <p class="book-description">Introdução amigável à lógica e aos primeiros códigos.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="meu-primeiro-livro-de-programacao-nestor-burlamaqui">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="programação" 
+     data-book-id="introducao-a-programacao-com-python-nilo-ney-coutinho-menezes"
+     data-title="Introdução à Programação com Python"
+     data-author="Nilo Ney Coutinho Menezes"
+     data-description=""
+     data-cover="imagem/programacao/py.jpg"
+     data-download="">
+    <img src="imagem/programacao/py.jpg" alt="Introdução à Programação com Python" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Introdução à Programação com Python</h3>
+        <p class="book-author">Nilo Ney Coutinho Menezes</p>
+        <p class="book-description">Conceitos básicos, algoritmos e muitos exemplos práticos em Python.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="introducao-a-programacao-com-python-nilo-ney-coutinho-menezes">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="programação" 
+     data-book-id="utilizando-uml-e-padroes-craig-larman"
+     data-title="Utilizando UML e Padrões"
+     data-author="Craig Larman"
+     data-description=""
+     data-cover="imagem/programacao/uml.jpg"
+     data-download="">
+    <img src="imagem/programacao/uml.jpg" alt="Utilizando UML e Padrões" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Utilizando UML e Padrões</h3>
+        <p class="book-author">Craig Larman</p>
+        <p class="book-description">Modelagem de software e aplicação de padrões de projeto na prática.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="utilizando-uml-e-padroes-craig-larman">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="programação" 
+     data-book-id="logica-de-programacao-e-algoritmos-com-javascript-edecio-fernando-iepsen"
+     data-title="Lógica de Programação e Algoritmos com JavaScript"
+     data-author="Edécio Fernando Iepsen"
+     data-description=""
+     data-cover="imagem/programacao/js.jpg"
+     data-download="">
+    <img src="imagem/programacao/js.jpg" alt="Lógica de Programação e Algoritmos com JavaScript" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Lógica de Programação e Algoritmos com JavaScript</h3>
+        <p class="book-author">Edécio Fernando Iepsen</p>
+        <p class="book-description">Aprenda a pensar algoritmicamente e a implementar soluções em JS.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="logica-de-programacao-e-algoritmos-com-javascript-edecio-fernando-iepsen">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="book-card" data-category="programação" 
+     data-book-id="use-a-cabeca-java-kathy-sierra-bert-bates"
+     data-title="Use a Cabeça! Java"
+     data-author="Kathy Sierra; Bert Bates"
+     data-description=""
+     data-cover="imagem/programacao/java.jpg"
+     data-download="">
+    <img src="imagem/programacao/java.jpg" alt="Use a Cabeça! Java" class="book-cover">
+    <div class="book-info">
+        <h3 class="book-title">Use a Cabeça! Java</h3>
+        <p class="book-author">Kathy Sierra; Bert Bates</p>
+        <p class="book-description">Curso visual e prático para aprender Java do zero de forma leve.</p>
+        <div class="book-actions">
+            <button class="like-btn" data-book-id="use-a-cabeca-java-kathy-sierra-bert-bates">
+                <span class="heart-icon">♡</span>
+                <span class="like-count">0</span>
+            </button>
+            <div class="rating-display">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(0)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ======= FIM DOS LIVROS======= -->
+
+
+        <!-- ============================================ -->
+        <!-- TEMPLATE PARA ADICIONAR NOVOS LIVROS -->
+        <!-- ============================================ -->
+        <!-- 
+        <div class="book-card" data-category="SUA_CATEGORIA" 
+             data-book-id="ID_UNICO_DO_LIVRO"
+             data-title="TÍTULO DO LIVRO"
+             data-author="NOME DO AUTOR"
+             data-description="DESCRIÇÃO DO LIVRO"
+             data-cover="URL_DA_CAPA"
+             data-download="URL_DO_DOWNLOAD">
+            <img src="URL_DA_CAPA" alt="TÍTULO DO LIVRO" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">TÍTULO DO LIVRO</h3>
+                <p class="book-author">NOME DO AUTOR</p>
+                <p class="book-description">DESCRIÇÃO DO LIVRO</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="ID_UNICO_DO_LIVRO">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+        <!-- ============================================ -->
+
+    </main>
+
+    <!-- Modal de Contato -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content contact-modal">
+            <span class="close-modal">&times;</span>
+            <h2>Entre em Contato com o Desevolvedor</h2>
+            <div class="contact-options">
+                <a href="https://www.instagram.com/fernandinho_rick/" target="_blank" class="contact-option">
+                    <div class="contact-icon">📷</div>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://github.com/RickAmorimFH" class="contact-option">
+                    <div class="contact-icon">🐈‍⬛</div>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://wa.me/5562998699377" target="_blank" class="contact-option">
+                    <div class="contact-icon">💬</div>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Sobre -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content about-modal">
+            <span class="close-modal">&times;</span>
+            <h2>Sobre a RICKOTECA</h2>
+            <p>Bem-vindo à RICKOTECA! Aqui você encontra uma vasta coleção de livros de diversas categorias.</p>
+            <p>Nossa missão é democratizar o acesso ao conhecimento e à cultura através da literatura digital.</p>
+        </div>
+    </div>
+
+    <!-- Modal de Detalhes do Livro -->
+    <div id="bookModal" class="modal">
+        <div class="modal-content book-modal">
+            <span class="close-modal">&times;</span>
+            <div class="book-details">
+                <img id="modalCover" src="/placeholder.svg" alt="" class="modal-book-cover">
+                <div class="book-details-info">
+                    <h2 id="modalTitle"></h2>
+                    <p class="modal-author"><strong>Autor:</strong> <span id="modalAuthor"></span></p>
+                    
+                    <div class="modal-rating-section">
+                        <div class="rating-stats">
+                            <div class="average-rating">
+                                <span class="rating-number" id="modalAverageRating">0.0</span>
+                                <div class="rating-stars" id="modalRatingStars">★★★★★</div>
+                                <span class="total-ratings" id="modalTotalRatings">(0 avaliações)</span>
+                            </div>
+                        </div>
+                        <div class="user-rating">
+                            <p class="rating-label">Avalie este livro:</p>
+                            <div class="star-rating" id="userStarRating">
+                                <span class="star" data-rating="1">☆</span>
+                                <span class="star" data-rating="2">☆</span>
+                                <span class="star" data-rating="3">☆</span>
+                                <span class="star" data-rating="4">☆</span>
+                                <span class="star" data-rating="5">☆</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="modal-description" id="modalDescription"></p>
+                    
+                    <div class="modal-actions">
+                        <button id="modalLikeBtn" class="modal-like-btn">
+                            <span class="heart-icon">♡</span>
+                            <span>Curtir</span>
+                            <span class="like-count" id="modalLikeCount">0</span>
+                        </button>
+                        <a id="modalDownload" href="#" target="_blank" class="download-btn">📥 Saiba Mais...</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adicionando seção de comunidade/comentários -->
+            <div class="community-section">
+                <h3 class="community-title">💬 Comunidade</h3>
+                
+                <!-- Formulário de comentário -->
+                <div class="comment-form-container">
+                    <input type="text" id="commentUserName" class="comment-input" placeholder="Seu nome" maxlength="50">
+                    <textarea id="commentText" class="comment-textarea" placeholder="Compartilhe sua opinião sobre este livro..." maxlength="500"></textarea>
+                    <div class="comment-form-actions">
+                        <span class="char-count" id="charCount">0/500</span>
+                        <button id="postCommentBtn" class="post-comment-btn">Publicar Comentário</button>
+                    </div>
+                </div>
+
+                <!-- Lista de comentários -->
+                <div class="comments-list" id="commentsList">
+                    <p class="no-comments">Seja o primeiro a comentar sobre este livro!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/particles.js"></script>
+    <script src="js/script.js"></script>
+    <!-- script de acessibilidade -->
+    <script src="js/accessibility.js"></script>
+</body>
+</html>
