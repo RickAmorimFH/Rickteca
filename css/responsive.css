@@ -6,6 +6,16 @@
     padding: 1.5rem 2rem;
   }
 
+    body.light .books-container {
+    padding: 2rem 2.5rem;
+    gap: 2rem;
+  }
+
+  body.light .category-bar {
+    margin: 0 2rem;
+    padding: 1rem 1.8rem;
+  }
+
   .book-details {
     flex-direction: column;
   }
@@ -41,6 +51,21 @@
 
   .category-bar {
     padding: 1rem;
+  }
+
+   body.light .search-container {
+    margin: 1.5rem auto;
+    padding: 1rem;
+  }
+
+  body.light .category-bar {
+    margin: 0 1.5rem;
+    padding: 1rem 1.2rem;
+  }
+
+  body.light .books-container {
+    padding: 1.5rem;
+    gap: 1.5rem;
   }
 
   .books-container {
@@ -112,6 +137,15 @@
     flex-direction: column;
   }
 
+   body.light .search-container {
+    padding: 0.85rem 1rem;
+  }
+
+  body.light .category-bar {
+    margin: 0 1rem;
+    padding: 0.85rem 1rem;
+  }
+  
   .search-btn {
     width: 100%;
   }

@@ -1,0 +1,34 @@
+/* --- Alinhar coração + estrelas no mesmo nível em TODOS os cards --- */
+
+/* 1) Estrutura do card: info cresce, ações grudam no rodapé */
+.book-card{
+  display: flex;
+  flex-direction: column;
+}
+.book-info{
+  flex: 1;                    /* ocupa o espaço do card */
+  display: flex;
+  flex-direction: column;
+}
+.book-actions{
+  margin-top: auto;           /* empurra as ações pro fundo do card */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 2) Alturas mínimas p/ título/autor/descrição ficarem padronizados */
+.book-title{ min-height: 3.2rem; }        /* ~2 linhas */
+.book-author{ min-height: 1.2rem; }       /* 1 linha */
+.book-description{ min-height: 4.6rem; }  /* 3 linhas (já tem line-clamp) */
+
+/* 3) Padronizar largura dos blocos de ação (evita “dançar” com 0/1/10 likes) */
+.like-btn{
+  min-width: 84px;            /* mesma largura em todos os cards */
+  justify-content: center;
+}
+.rating-display{
+  min-width: 120px;           /* estrelas + (n) com largura fixa */
+  display: flex;
+  justify-content: flex-end;
+}

@@ -60,6 +60,8 @@ function postComment() {
     return
   }
 
+    localStorage.setItem("userName", userName)
+
   if (!commentsData[currentBookId]) {
     commentsData[currentBookId] = []
   }
@@ -277,7 +279,7 @@ function highlightStars(rating) {
   stars.forEach((star, index) => {
     if (index < rating) {
       star.classList.add("hover")
-      star.textContent = "��"
+      star.textContent = "★"
     } else {
       star.classList.remove("hover")
       star.textContent = "☆"
@@ -468,86 +470,50 @@ document.addEventListener("keydown", (e) => {
 })
 
 // === THEME TOGGLER ===
-(function() {
-  const STORAGE_KEY = 'rickoteca-theme';
-  const body = document.body;
-  const saved = localStorage.getItem(STORAGE_KEY);
-  const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+;(function () {
+  const STORAGE_KEY = "rickoteca-theme"
+  const body = document.body
+  const btn = document.getElementById("themeToggle")
 
-  // Padrão: claro (se nada salvo)
-  if (saved === 'light' || (!saved && prefersLight) || !saved) {
-    body.classList.add('light');
-  } else {
-    body.classList.remove('light');
-  }
+  const prefersLight =
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-color-scheme: light)").matches
 
-  function updateIcon(btn) {
-    if (!btn) return;
-    const isLight = body.classList.contains('light');
-    btn.textContent = isLight ? '🌞' : '🌙';
-    btn.setAttribute('aria-label', isLight ? 'Alternar para modo escuro' : 'Alternar para modo claro');
-    btn.title = isLight ? 'Modo claro' : 'Modo escuro';
-  }
-
-  function toggle() {
-    body.classList.toggle('light');
-    localStorage.setItem(STORAGE_KEY, body.classList.contains('light') ? 'light' : 'dark');
-    updateIcon(document.getElementById('themeToggle'));
-  }
-
-  window.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('themeToggle');
-    if (btn) {
-      btn.addEventListener('click', toggle);
-      updateIcon(btn);
+  function detectInitialTheme() {
+    const saved = localStorage.getItem(STORAGE_KEY)
+    if (saved === "light" || saved === "dark") {
+      return saved
     }
-  });
-})();
-
-const themeToggle = document.getElementById("theme-toggle");
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    const isDark = document.body.classList.contains("dark");
-    themeToggle.textContent = isDark ? "🌞" : "🌙";
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-  });
-
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark");
-    themeToggle.textContent = "🌞";
-  }
-}
-
-// === THEME TOGGLER ===
-// One source of truth: toggle 'light' class on <body> and persist in localStorage.
-(function() {
-  const STORAGE_KEY = 'rickoteca-theme';
-  const body = document.body;
-  const btn = document.getElementById('themeToggle');
-
-  function apply(theme) {
-    const isLight = theme === 'light';
-    body.classList.toggle('light', isLight);
-    if (btn) btn.textContent = isLight ? '🌙' : '🌞';
-    localStorage.setItem(STORAGE_KEY, isLight ? 'light' : 'dark');
+    return prefersLight ? "light" : "dark"
   }
 
-  function detectInitial() {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved === 'light' || saved === 'dark') return saved;
-    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-    return prefersLight ? 'light' : 'dark';
+  function applyTheme(theme) {
+    const isLight = theme === "light"
+    body.classList.toggle("light", isLight)
+    localStorage.setItem(STORAGE_KEY, isLight ? "light" : "dark")
   }
 
-  const initial = detectInitial();
-  apply(initial);
+   function applyTheme(theme) {
+    const isLight = theme === "light"
+    body.classList.toggle("light", isLight)
+    localStorage.setItem(STORAGE_KEY, isLight ? "light" : "dark")
+
+    if (btn) {
+      btn.textContent = isLight ? "🌙" : "🌞"
+      btn.setAttribute(
+        "aria-label",
+        isLight ? "Alternar para modo escuro" : "Alternar para modo claro",
+      )
+      btn.title = isLight ? "Modo claro" : "Modo escuro"
+    }
+  }
+
+  applyTheme(detectInitialTheme())
 
   if (btn) {
-    btn.addEventListener('click', () => {
-      const current = body.classList.contains('light') ? 'light' : 'dark';
-      apply(current === 'light' ? 'dark' : 'light');
-    });
+    btn.addEventListener("click", () => {
+      const nextTheme = body.classList.contains("light") ? "dark" : "light"
+      applyTheme(nextTheme)
+    })
   }
-})();
+})()

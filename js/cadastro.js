@@ -29,6 +29,13 @@ cadastroForm.addEventListener("submit", async (e) => {
 
   console.log("[v0] Dados do formulário:", formData)
 
+    const registeredUsers = JSON.parse(localStorage.getItem("registeredUsers") || "[]")
+  registeredUsers.push({ ...formData, createdAt: new Date().toISOString() })
+  localStorage.setItem("registeredUsers", JSON.stringify(registeredUsers))
+
+  localStorage.setItem("userName", formData.nome)
+  localStorage.setItem("userEmail", formData.email)
+
   // AQUI VOCÊ PODE ADICIONAR A INTEGRAÇÃO COM SUPABASE
   // Exemplo de como seria:
   /*
@@ -53,6 +60,6 @@ cadastroForm.addEventListener("submit", async (e) => {
 
   // Redireciona após 3 segundos
   setTimeout(() => {
-    window.location.href = "index.html"
+    window.location.href = "../index.html"
   }, 3000)
 })
