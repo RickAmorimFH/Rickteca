@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esportes - RICKOTECA</title>
+    <link rel="stylesheet" href="../../css/cente.css">
+    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+</head>
+<body>
+    <canvas id="particlesCanvas" class="particles-canvas"></canvas>
+
+    <header class="header">
+        <div class="header-left">
+            <img src="../../imagem/icon/logo.png" alt="RICKOTECA Logo" class="logo-img">
+            <h1 class="site-name">RICKOTECA</h1>
+        </div>
+        <nav class="header-right">
+            <a href="../../index.html" class="nav-link">Home</a>
+            <a href="../../index.html#categorias" class="nav-link">Categorias</a>
+            <a href="#" class="nav-link" data-page="sobre">Sobre</a>
+            <a href="#" class="nav-link" data-page="contato">Contato</a>
+            <a href="../cadastro.html" class="nav-link">Minha conta</a>
+            <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">🌞</button>
+        </nav>
+    </header>
+
+    <section class="page-heading">
+        <h2>Categoria: Esportes</h2>
+        <p>Biografias inspiradoras e guias para alcançar alta performance dentro e fora das quadras.</p>
+    </section>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar livros esportivos...">
+        <button class="search-btn">🔍</button>
+    </div>
+
+    <main class="books-container" id="booksContainer">
+        <div class="book-card" data-category="esportes"
+             data-book-id="ayrton-senna-uma-lenda-a-toda-velocidade-christopher-hilton"
+             data-title="Ayrton Senna: Uma lenda a toda velocidade"
+             data-author="Christopher Hilton"
+             data-description="Biografia do tricampeão, das vitórias nas pistas ao legado no esporte."
+             data-cover="../../imagem/esporte/senna.jpg"
+             data-download="../livros/esporte/senna.html">
+            <img src="../../imagem/esporte/senna.jpg" alt="Ayrton Senna: Uma lenda a toda velocidade" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Ayrton Senna: Uma lenda a toda velocidade</h3>
+                <p class="book-author">Christopher Hilton</p>
+                <p class="book-description">Biografia do tricampeão, das vitórias nas pistas ao legado no esporte.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="ayrton-senna-uma-lenda-a-toda-velocidade-christopher-hilton">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card" data-category="esportes"
+             data-book-id="cristiano-ronaldo-e-o-melhor-simon-mugford-dan-green"
+             data-title="Cristiano Ronaldo: É o Melhor"
+             data-author="Simon Mugford; Dan Green"
+             data-description="A trajetória do craque português rumo ao topo do futebol mundial."
+             data-cover="../../imagem/esporte/cr7.jpg"
+             data-download="../livros/esporte/cr7.html">
+            <img src="../../imagem/esporte/cr7.jpg" alt="Cristiano Ronaldo: É o Melhor" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Cristiano Ronaldo: É o Melhor</h3>
+                <p class="book-author">Simon Mugford; Dan Green</p>
+                <p class="book-description">A trajetória do craque português rumo ao topo do futebol mundial.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="cristiano-ronaldo-e-o-melhor-simon-mugford-dan-green">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card" data-category="esportes"
+             data-book-id="messi-o-genio-completo-ariel-senosiain"
+             data-title="Messi: O Gênio Completo"
+             data-author="Ariel Senosiain"
+             data-description="A história do gênio argentino e seus momentos inesquecíveis."
+             data-cover="../../imagem/esporte/messi.jpg"
+             data-download="../livros/esporte/messi.html">
+            <img src="../../imagem/esporte/messi.jpg" alt="Messi: O Gênio Completo" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Messi: O Gênio Completo</h3>
+                <p class="book-author">Ariel Senosiain</p>
+                <p class="book-description">A história do gênio argentino e seus momentos inesquecíveis.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="messi-o-genio-completo-ariel-senosiain">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card" data-category="esportes"
+             data-book-id="nunca-deixe-de-tentar-michael-jordan"
+             data-title="Nunca Deixe de Tentar"
+             data-author="Michael Jordan"
+             data-description="Lições de persistência e mentalidade vencedora a partir de Michael Jordan."
+             data-cover="../../imagem/esporte/ndeixe.jpg"
+             data-download="../livros/esporte/ndeixe.html">
+            <img src="../../imagem/esporte/ndeixe.jpg" alt="Nunca Deixe de Tentar" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Nunca Deixe de Tentar</h3>
+                <p class="book-author">Michael Jordan</p>
+                <p class="book-description">Lições de persistência e mentalidade vencedora a partir de Michael Jordan.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="nunca-deixe-de-tentar-michael-jordan">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card" data-category="esportes"
+             data-book-id="nunca-e-hora-de-parar-david-goggins"
+             data-title="Nunca é Hora de Parar"
+             data-author="David Goggins"
+             data-description="Motivação e disciplina para superar limites e transformar a vida."
+             data-cover="../../imagem/esporte/hora.jpg"
+             data-download="../livros/esporte/hora.html">
+            <img src="../../imagem/esporte/hora.jpg" alt="Nunca é Hora de Parar" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Nunca é Hora de Parar</h3>
+                <p class="book-author">David Goggins</p>
+                <p class="book-description">Motivação e disciplina para superar limites e transformar a vida.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="nunca-e-hora-de-parar-david-goggins">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card" data-category="esportes"
+             data-book-id="hipertrofia-muscular-ciencia-e-pratica-brad-schoenfeld"
+             data-title="Hipertrofia Muscular: Ciência e Prática"
+             data-author="Brad Schoenfeld"
+             data-description="Treino e nutrição baseados em evidências para ganhar massa muscular."
+             data-cover="../../imagem/esporte/forca.jpg"
+             data-download="../livros/esporte/forca.html">
+            <img src="../../imagem/esporte/forca.jpg" alt="Hipertrofia Muscular: Ciência e Prática" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Hipertrofia Muscular: Ciência e Prática</h3>
+                <p class="book-author">Brad Schoenfeld</p>
+                <p class="book-description">Treino e nutrição baseados em evidências para ganhar massa muscular.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="hipertrofia-muscular-ciencia-e-pratica-brad-schoenfeld">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modals reused from other páginas -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content contact-modal">
+            <span class="close-modal">&times;</span>
+            <h2>Entre em Contato com o Desenvolvedor</h2>
+            <div class="contact-options">
+                <a href="https://www.instagram.com/fernandinho_rick/" target="_blank" class="contact-option">
+                    <div class="contact-icon">📷</div>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://github.com/RickAmorimFH" class="contact-option">
+                    <div class="contact-icon">🐈‍⬛</div>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://wa.me/5562998699377" target="_blank" class="contact-option">
+                    <div class="contact-icon">💬</div>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="aboutModal" class="modal">
+        <div class="modal-content about-modal">
+            <span class="close-modal">&times;</span>
+            <h2>Sobre a RICKOTECA</h2>
+            <p>Bem-vindo à RICKOTECA! Aqui você encontra uma vasta coleção de livros de diversas categorias.</p>
+            <p>Nossa missão é democratizar o acesso ao conhecimento e à cultura através da literatura digital.</p>
+        </div>
+    </div>
+
+    <div id="bookModal" class="modal">
+        <div class="modal-content book-modal">
+            <span class="close-modal">&times;</span>
+            <div class="book-details">
+                <img id="modalCover" src="/placeholder.svg" alt="" class="modal-book-cover">
+                <div class="book-details-info">
+                    <h2 id="modalTitle"></h2>
+                    <p class="modal-author"><strong>Autor:</strong> <span id="modalAuthor"></span></p>
+                    <div class="modal-rating-section">
+                        <div class="rating-stats">
+                            <div class="average-rating">
+                                <span class="rating-number" id="modalAverageRating">0.0</span>
+                                <div class="rating-stars" id="modalRatingStars">★★★★★</div>
+                                <span class="total-ratings" id="modalTotalRatings">(0 avaliações)</span>
+                            </div>
+                        </div>
+                        <div class="user-rating">
+                            <p class="rating-label">Avalie este livro:</p>
+                            <div class="star-rating" id="userStarRating">
+                                <span class="star" data-rating="1">☆</span>
+                                <span class="star" data-rating="2">☆</span>
+                                <span class="star" data-rating="3">☆</span>
+                                <span class="star" data-rating="4">☆</span>
+                                <span class="star" data-rating="5">☆</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="modal-description" id="modalDescription"></p>
+
+                    <div class="modal-actions">
+                        <button id="modalLikeBtn" class="modal-like-btn">
+                            <span class="heart-icon">♡</span>
+                            <span>Curtir</span>
+                            <span class="like-count" id="modalLikeCount">0</span>
+                        </button>
+                        <a id="modalDownload" href="#" target="_blank" class="download-btn">📥 Saiba Mais...</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="community-section">
+                <h3 class="community-title">💬 Comunidade</h3>
+
+                <div class="comment-form-container">
+                    <input type="text" id="commentUserName" class="comment-input" placeholder="Seu nome" maxlength="50">
+                    <textarea id="commentText" class="comment-textarea" placeholder="Compartilhe sua opinião sobre este livro..." maxlength="500"></textarea>
+                    <div class="comment-form-actions">
+                        <span class="char-count" id="charCount">0/500</span>
+                        <button id="postCommentBtn" class="post-comment-btn">Publicar Comentário</button>
+                    </div>
+                </div>
+
+                <div class="comments-list" id="commentsList">
+                    <p class="no-comments">Seja o primeiro a comentar sobre este livro!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/particles.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/script.js"></script>
+    <script src="../../js/accessibility.js"></script>
+</body>
+</html>

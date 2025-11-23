@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação - RICKOTECA</title>
+    <link rel="stylesheet" href="../../css/cente.css">
+    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+</head>
+<body>
+    <canvas id="particlesCanvas" class="particles-canvas"></canvas>
+
+    <header class="header">
+        <div class="header-left">
+            <img src="../../imagem/icon/logo.png" alt="RICKOTECA Logo" class="logo-img">
+            <h1 class="site-name">RICKOTECA</h1>
+        </div>
+        <nav class="header-right">
+            <a href="../../index.html" class="nav-link">Home</a>
+            <a href="../../index.html#categorias" class="nav-link">Categorias</a>
+            <a href="#" class="nav-link" data-page="sobre">Sobre</a>
+            <a href="#" class="nav-link" data-page="contato">Contato</a>
+            <a href="../cadastro.html" class="nav-link">Minha conta</a>
+            <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">🌞</button>
+        </nav>
+    </header>
+
+    <section class="page-heading">
+        <h2>Categoria: Programação</h2>
+        <p>Livros técnicos e introdutórios para acelerar sua jornada no desenvolvimento de software.</p>
+    </section>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar livros de programação...">
+        <button class="search-btn">🔍</button>
+    </div>
+
+    <main class="books-container" id="booksContainer">
+        <div class="book-card" data-category="programação"
+             data-book-id="entendendo-algoritmos-aditya-bhargava"
+             data-title="Entendendo Algoritmos"
+             data-author="Aditya Bhargava"
+             data-description="Algoritmos essenciais explicados de forma simples e ilustrada."
+             data-cover="../../imagem/programacao/algoritimo.jpg"
+             data-download="../livros/programacao/algoritimo.html">
+            <img src="../../imagem/programacao/algoritimo.jpg" alt="Entendendo Algoritmos" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Entendendo Algoritmos</h3>
+                <p class="book-author">Aditya Bhargava</p>
+                <p class="book-description">Algoritmos essenciais explicados de forma simples e ilustrada.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="entendendo-algoritmos-aditya-bhargava">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card" data-category="programação"
+             data-book-id="meu-primeiro-livro-de-programacao-nestor-burlamaqui"
+             data-title="Meu Primeiro Livro de Programação"
+             data-author="Nestor Burlamaqui"
+             data-description="Introdução amigável à lógica e aos primeiros códigos."
+             data-cover="../../imagem/programacao/primeirocd.png"
+             data-download="../livros/programacao/primeirocd.html">
+            <img src="../../imagem/programacao/primeirocd.png" alt="Meu Primeiro Livro de Programação" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Meu Primeiro Livro de Programação</h3>
+                <p class="book-author">Nestor Burlamaqui</p>
+                <p class="book-description">Introdução amigável à lógica e aos primeiros códigos.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="meu-primeiro-livro-de-programacao-nestor-burlamaqui">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card" data-category="programação"
+             data-book-id="introducao-a-programacao-com-python-nilo-ney-coutinho-menezes"
+             data-title="Introdução à Programação com Python"
+             data-author="Nilo Ney Coutinho Menezes"
+             data-description="Conceitos básicos, algoritmos e exemplos práticos em Python."
+             data-cover="../../imagem/programacao/py.jpg"
+             data-download="../livros/programacao/py.html">
+            <img src="../../imagem/programacao/py.jpg" alt="Introdução à Programação com Python" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Introdução à Programação com Python</h3>
+                <p class="book-author">Nilo Ney Coutinho Menezes</p>
+                <p class="book-description">Conceitos básicos, algoritmos e exemplos práticos em Python.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="introducao-a-programacao-com-python-nilo-ney-coutinho-menezes">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card" data-category="programação"
+             data-book-id="utilizando-uml-e-padroes-craig-larman"
+             data-title="Utilizando UML e Padrões"
+             data-author="Craig Larman"
+             data-description="Modelagem de software e aplicação de padrões de projeto na prática."
+             data-cover="../../imagem/programacao/uml.jpg"
+             data-download="../livros/programacao/uml.html">
+            <img src="../../imagem/programacao/uml.jpg" alt="Utilizando UML e Padrões" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Utilizando UML e Padrões</h3>
+                <p class="book-author">Craig Larman</p>
+                <p class="book-description">Modelagem de software e aplicação de padrões de projeto na prática.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="utilizando-uml-e-padroes-craig-larman">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card" data-category="programação"
+             data-book-id="logica-de-programacao-e-algoritmos-com-javascript-edecio-fernando-iepsen"
+             data-title="Lógica de Programação e Algoritmos com JavaScript"
+             data-author="Edécio Fernando Iepsen"
+             data-description="Aprenda a pensar algoritmicamente e a implementar soluções em JS."
+             data-cover="../../imagem/programacao/js.jpg"
+             data-download="../livros/programacao/js.html">
+            <img src="../../imagem/programacao/js.jpg" alt="Lógica de Programação e Algoritmos com JavaScript" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Lógica de Programação e Algoritmos com JavaScript</h3>
+                <p class="book-author">Edécio Fernando Iepsen</p>
+                <p class="book-description">Aprenda a pensar algoritmicamente e a implementar soluções em JS.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="logica-de-programacao-e-algoritmos-com-javascript-edecio-fernando-iepsen">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card" data-category="programação"
+             data-book-id="use-a-cabeca-java-kathy-sierra-bert-bates"
+             data-title="Use a Cabeça! Java"
+             data-author="Kathy Sierra; Bert Bates"
+             data-description="Curso visual e prático para aprender Java do zero de forma leve."
+             data-cover="../../imagem/programacao/java.jpg"
+             data-download="../livros/programacao/java.html">
+            <img src="../../imagem/programacao/java.jpg" alt="Use a Cabeça! Java" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Use a Cabeça! Java</h3>
+                <p class="book-author">Kathy Sierra; Bert Bates</p>
+                <p class="book-description">Curso visual e prático para aprender Java do zero de forma leve.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="use-a-cabeca-java-kathy-sierra-bert-bates">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content contact-modal">
+            <span class="close-modal">&times;</span>
+            <h2>Entre em Contato com o Desenvolvedor</h2>
+            <div class="contact-options">
+                <a href="https://www.instagram.com/fernandinho_rick/" target="_blank" class="contact-option">
+                    <div class="contact-icon">📷</div>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://github.com/RickAmorimFH" class="contact-option">
+                    <div class="contact-icon">🐈‍⬛</div>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://wa.me/5562998699377" target="_blank" class="contact-option">
+                    <div class="contact-icon">💬</div>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="aboutModal" class="modal">
+        <div class="modal-content about-modal">
+            <span class="close-modal">&times;</span>
+            <h2>Sobre a RICKOTECA</h2>
+            <p>Bem-vindo à RICKOTECA! Aqui você encontra uma vasta coleção de livros de diversas categorias.</p>
+            <p>Nossa missão é democratizar o acesso ao conhecimento e à cultura através da literatura digital.</p>
+        </div>
+    </div>
+
+    <div id="bookModal" class="modal">
+        <div class="modal-content book-modal">
+            <span class="close-modal">&times;</span>
+            <div class="book-details">
+                <img id="modalCover" src="/placeholder.svg" alt="" class="modal-book-cover">
+                <div class="book-details-info">
+                    <h2 id="modalTitle"></h2>
+                    <p class="modal-author"><strong>Autor:</strong> <span id="modalAuthor"></span></p>
+                    <div class="modal-rating-section">
+                        <div class="rating-stats">
+                            <div class="average-rating">
+                                <span class="rating-number" id="modalAverageRating">0.0</span>
+                                <div class="rating-stars" id="modalRatingStars">★★★★★</div>
+                                <span class="total-ratings" id="modalTotalRatings">(0 avaliações)</span>
+                            </div>
+                        </div>
+                        <div class="user-rating">
+                            <p class="rating-label">Avalie este livro:</p>
+                            <div class="star-rating" id="userStarRating">
+                                <span class="star" data-rating="1">☆</span>
+                                <span class="star" data-rating="2">☆</span>
+                                <span class="star" data-rating="3">☆</span>
+                                <span class="star" data-rating="4">☆</span>
+                                <span class="star" data-rating="5">☆</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="modal-description" id="modalDescription"></p>
+
+                    <div class="modal-actions">
+                        <button id="modalLikeBtn" class="modal-like-btn">
+                            <span class="heart-icon">♡</span>
+                            <span>Curtir</span>
+                            <span class="like-count" id="modalLikeCount">0</span>
+                        </button>
+                        <a id="modalDownload" href="#" target="_blank" class="download-btn">📥 Saiba Mais...</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="community-section">
+                <h3 class="community-title">💬 Comunidade</h3>
+
+                <div class="comment-form-container">
+                    <input type="text" id="commentUserName" class="comment-input" placeholder="Seu nome" maxlength="50">
+                    <textarea id="commentText" class="comment-textarea" placeholder="Compartilhe sua opinião sobre este livro..." maxlength="500"></textarea>
+                    <div class="comment-form-actions">
+                        <span class="char-count" id="charCount">0/500</span>
+                        <button id="postCommentBtn" class="post-comment-btn">Publicar Comentário</button>
+                    </div>
+                </div>
+
+                <div class="comments-list" id="commentsList">
+                    <p class="no-comments">Seja o primeiro a comentar sobre este livro!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/particles.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/script.js"></script>
+    <script src="../../js/accessibility.js"></script>
+</body>
+</html>

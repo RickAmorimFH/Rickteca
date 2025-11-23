@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mangás - RICKOTECA</title>
+    <link rel="stylesheet" href="../../css/cente.css">
+    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+</head>
+<body>
+    <canvas id="particlesCanvas" class="particles-canvas"></canvas>
+
+    <header class="header">
+        <div class="header-left">
+            <img src="../../imagem/icon/logo.png" alt="RICKOTECA Logo" class="logo-img">
+            <h1 class="site-name">RICKOTECA</h1>
+        </div>
+        <nav class="header-right">
+            <a href="../../index.html" class="nav-link">Home</a>
+            <a href="../../index.html#categorias" class="nav-link">Categorias</a>
+            <a href="#" class="nav-link" data-page="sobre">Sobre</a>
+            <a href="#" class="nav-link" data-page="contato">Contato</a>
+            <a href="../cadastro.html" class="nav-link">Minha conta</a>
+            <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">🌞</button>
+        </nav>
+    </header>
+
+    <section class="page-heading">
+        <h2>Categoria: Mangás</h2>
+        <p>Embarque em jornadas épicas com ninjas, guerreiros e heróis que marcaram gerações.</p>
+    </section>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar mangás...">
+        <button class="search-btn">🔍</button>
+    </div>
+
+    <main class="books-container" id="booksContainer">
+        <div class="book-card" data-category="mangas"
+             data-book-id="naruto-vol1"
+             data-title="Naruto Vol. 1"
+             data-author="Masashi Kishimoto"
+             data-description="A história de um jovem ninja que sonha em se tornar Hokage."
+             data-cover="https://images.unsplash.com/photo-1612178537253-bccd437b730e?w=400"
+             data-download="../livros/mangar/naruto.html">
+            <img src="https://m.media-amazon.com/images/I/91xUwI2UEVL._AC_SY741_.jpg" alt="Naruto Vol. 1" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Naruto Vol. 1</h3>
+                <p class="book-author">Masashi Kishimoto</p>
+                <p class="book-description">A história de um jovem ninja que sonha em se tornar Hokage.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="naruto-vol1">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card" data-category="mangas"
+             data-book-id="the-seven-deadly-sins-volume-1-nakaba-suzuki"
+             data-title="The Seven Deadly Sins Volume 1"
+             data-author="Nakaba Suzuki"
+             data-description="Meliodas e os Pecados Capitais iniciam uma aventura para salvar o reino."
+             data-cover="../../imagem/mangar/sevey.jpg"
+             data-download="../livros/mangar/sevey.html">
+            <img src="../../imagem/mangar/sevey.jpg" alt="The Seven Deadly Sins Volume 1" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">The Seven Deadly Sins Volume 1</h3>
+                <p class="book-author">Nakaba Suzuki</p>
+                <p class="book-description">Meliodas e os Pecados Capitais iniciam uma aventura para salvar o reino.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="the-seven-deadly-sins-volume-1-nakaba-suzuki">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card" data-category="mangas"
+             data-book-id="dragon-ball-super-volume-1-akira-toriyama"
+             data-title="Dragon Ball Super Volume 1"
+             data-author="Akira Toriyama"
+             data-description="Goku e amigos encaram novos desafios após a paz trazida por Majin Boo."
+             data-cover="../../imagem/mangar/goku.jpg"
+             data-download="../livros/mangar/goku.html">
+            <img src="../../imagem/mangar/goku.jpg" alt="Dragon Ball Super Volume 1" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Dragon Ball Super Volume 1</h3>
+                <p class="book-author">Akira Toriyama</p>
+                <p class="book-description">Goku e amigos encaram novos desafios após a paz trazida por Majin Boo.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="dragon-ball-super-volume-1-akira-toriyama">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card" data-category="mangas"
+             data-book-id="demon-slayer-volume-1-koyoharu-gotouge"
+             data-title="Demon Slayer Volume 1"
+             data-author="Koyoharu Gotouge"
+             data-description="Tanjiro torna-se caçador de demônios para proteger e curar sua irmã."
+             data-cover="../../imagem/mangar/yaiba.jpg"
+             data-download="../livros/mangar/yaiba.html">
+            <img src="../../imagem/mangar/yaiba.jpg" alt="Demon Slayer Volume 1" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Demon Slayer Volume 1</h3>
+                <p class="book-author">Koyoharu Gotouge</p>
+                <p class="book-description">Tanjiro torna-se caçador de demônios para proteger e curar sua irmã.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="demon-slayer-volume-1-koyoharu-gotouge">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card" data-category="mangas"
+             data-book-id="death-note-volume-1-tsugumi-ohba"
+             data-title="Death Note Volume 1"
+             data-author="Tsugumi Ohba"
+             data-description="Light encontra um caderno mortal e inicia um jogo de inteligência com L."
+             data-cover="../../imagem/mangar/note.jpg"
+             data-download="../livros/mangar/note.html">
+            <img src="../../imagem/mangar/note.jpg" alt="Death Note Volume 1" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Death Note Volume 1</h3>
+                <p class="book-author">Tsugumi Ohba</p>
+                <p class="book-description">Light encontra um caderno mortal e inicia um jogo de inteligência com L.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="death-note-volume-1-tsugumi-ohba">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card" data-category="mangas"
+             data-book-id="black-clover-volume-1-yuki-tabata"
+             data-title="Black Clover Volume 1"
+             data-author="Yūki Tabata"
+             data-description="Sem magia, Asta luta para provar seu valor e sonha ser Rei Mago."
+             data-cover="../../imagem/mangar/black.jpg"
+             data-download="../livros/mangar/black.html">
+            <img src="../../imagem/mangar/black.jpg" alt="Black Clover Volume 1" class="book-cover">
+            <div class="book-info">
+                <h3 class="book-title">Black Clover Volume 1</h3>
+                <p class="book-author">Yūki Tabata</p>
+                <p class="book-description">Sem magia, Asta luta para provar seu valor e sonha ser Rei Mago.</p>
+                <div class="book-actions">
+                    <button class="like-btn" data-book-id="black-clover-volume-1-yuki-tabata">
+                        <span class="heart-icon">♡</span>
+                        <span class="like-count">0</span>
+                    </button>
+                    <div class="rating-display">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content contact-modal">
+            <span class="close-modal">&times;</span>
+            <h2>Entre em Contato com o Desenvolvedor</h2>
+            <div class="contact-options">
+                <a href="https://www.instagram.com/fernandinho_rick/" target="_blank" class="contact-option">
+                    <div class="contact-icon">📷</div>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://github.com/RickAmorimFH" class="contact-option">
+                    <div class="contact-icon">🐈‍⬛</div>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://wa.me/5562998699377" target="_blank" class="contact-option">
+                    <div class="contact-icon">💬</div>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="aboutModal" class="modal">
+        <div class="modal-content about-modal">
+            <span class="close-modal">&times;</span>
+            <h2>Sobre a RICKOTECA</h2>
+            <p>Bem-vindo à RICKOTECA! Aqui você encontra uma vasta coleção de livros de diversas categorias.</p>
+            <p>Nossa missão é democratizar o acesso ao conhecimento e à cultura através da literatura digital.</p>
+        </div>
+    </div>
+
+    <div id="bookModal" class="modal">
+        <div class="modal-content book-modal">
+            <span class="close-modal">&times;</span>
+            <div class="book-details">
+                <img id="modalCover" src="/placeholder.svg" alt="" class="modal-book-cover">
+                <div class="book-details-info">
+                    <h2 id="modalTitle"></h2>
+                    <p class="modal-author"><strong>Autor:</strong> <span id="modalAuthor"></span></p>
+
+                    <div class="modal-rating-section">
+                        <div class="rating-stats">
+                            <div class="average-rating">
+                                <span class="rating-number" id="modalAverageRating">0.0</span>
+                                <div class="rating-stars" id="modalRatingStars">★★★★★</div>
+                                <span class="total-ratings" id="modalTotalRatings">(0 avaliações)</span>
+                            </div>
+                        </div>
+                        <div class="user-rating">
+                            <p class="rating-label">Avalie este livro:</p>
+                            <div class="star-rating" id="userStarRating">
+                                <span class="star" data-rating="1">☆</span>
+                                <span class="star" data-rating="2">☆</span>
+                                <span class="star" data-rating="3">☆</span>
+                                <span class="star" data-rating="4">☆</span>
+                                <span class="star" data-rating="5">☆</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="modal-description" id="modalDescription"></p>
+
+                    <div class="modal-actions">
+                        <button id="modalLikeBtn" class="modal-like-btn">
+                            <span class="heart-icon">♡</span>
+                            <span>Curtir</span>
+                            <span class="like-count" id="modalLikeCount">0</span>
+                        </button>
+                        <a id="modalDownload" href="#" target="_blank" class="download-btn">📥 Saiba Mais...</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="community-section">
+                <h3 class="community-title">💬 Comunidade</h3>
+
+                <div class="comment-form-container">
+                    <input type="text" id="commentUserName" class="comment-input" placeholder="Seu nome" maxlength="50">
+                    <textarea id="commentText" class="comment-textarea" placeholder="Compartilhe sua opinião sobre este livro..." maxlength="500"></textarea>
+                    <div class="comment-form-actions">
+                        <span class="char-count" id="charCount">0/500</span>
+                        <button id="postCommentBtn" class="post-comment-btn">Publicar Comentário</button>
+                    </div>
+                </div>
+
+                <div class="comments-list" id="commentsList">
+                    <p class="no-comments">Seja o primeiro a comentar sobre este livro!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/particles.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/script.js"></script>
+    <script src="../../js/accessibility.js"></script>
+</body>
+</html>
