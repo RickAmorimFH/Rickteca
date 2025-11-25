@@ -531,6 +531,15 @@ body {
   display: flex;
   gap: 2rem;
   margin-top: 1rem;
+  padding: 2rem;
+  background: radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.08), transparent 35%),
+    radial-gradient(circle at 80% 0, rgba(0, 150, 255, 0.08), transparent 30%),
+    rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--stroke);
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  align-items: center;
+  backdrop-filter: blur(8px);
 }
 
 .modal-book-cover {
@@ -542,6 +551,20 @@ body {
 
 .book-details-info {
   flex: 1;
+}
+
+.cover {
+  width: min(320px, 38vw);
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 150, 255, 0.25);
+  border: 2px solid rgba(0, 150, 255, 0.35);
+}
+
+.content .book-details .book-title {
+  font-size: clamp(1.8rem, 2vw + 1rem, 2.4rem);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
 }
 
 .book-details-info h2 {
@@ -557,6 +580,10 @@ body {
   line-height: 1.85;
   text-align: justify;
   text-wrap: pretty;
+    background: rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(0, 150, 255, 0.15);
 }
 
 .btn.ghost {
@@ -1974,3 +2001,29 @@ body .books-container {
 @media (max-width: 600px) {
   body .books-container { grid-template-columns: 1fr !important; }
 }
+
+/* ====== CORREÇÃO DE CONTRASTE PARA TEMA CLARO/ESCURO ====== */
+
+/* Login / cadastro */
+.cadastro-subtitle {
+  color: var(--text-muted);
+}
+
+/* Modal "Sobre a RICKOTECA" */
+.about-modal p {
+  color: var(--text-muted);
+}
+
+/* Formulário de comentários */
+.comment-input,
+.comment-textarea {
+  color: var(--text);        /* texto principal */
+  background: var(--input); /* usa o fundo certo do tema */
+}
+
+/* Placeholders (dentro dos inputs/textarea) */
+.comment-input::placeholder,
+.comment-textarea::placeholder {
+  color: var(--text-muted); /* em vez de branco transparente */
+}
+
