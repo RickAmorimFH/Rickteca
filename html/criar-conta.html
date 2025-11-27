@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criar conta - RICKOTECA</title>
+
+  <!-- Estilos da Rickoteca -->
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/header.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+  <!-- Fundo de partículas -->
+  <canvas id="particlesCanvas" class="particles-canvas"></canvas>
+
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="header-left">
+      <img src="../imagem/icon/logo.png" alt="RICKOTECA Logo" class="logo-img" />
+      <h1 class="site-name">RICKOTECA</h1>
+    </div>
+
+    <nav class="header-right">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../index.html#categorias" class="nav-link">Categorias</a>
+      <a href="#" class="nav-link" data-page="sobre">Sobre</a>
+      <a href="#" class="nav-link" data-page="contato">Contato</a>
+      <a href="cadastro.html" class="nav-link">Log</a>
+
+      <button
+        id="themeToggle"
+        class="theme-toggle"
+        aria-label="Alternar tema"
+        title="Alternar tema"
+      >
+        🌞
+      </button>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal: Criar conta -->
+  <main class="cadastro-container">
+    <div class="cadastro-card">
+      <h2 class="cadastro-title">Crie sua conta</h2>
+      <p class="cadastro-subtitle">
+        Preencha seus dados para começar a salvar favoritos e interagir com a Rickoteca.
+      </p>
+
+      <!-- Formulário de cadastro -->
+      <form id="cadastroForm" class="cadastro-form" novalidate>
+        <div class="form-group">
+          <label for="nome">Nome Completo *</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            required
+            placeholder="Digite seu nome completo"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="seu@email.com"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="telefone">Telefone *</label>
+          <input
+            type="tel"
+            id="telefone"
+            name="telefone"
+            required
+            placeholder="(00) 00000-0000"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="senha">Senha *</label>
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            required
+            minlength="6"
+            placeholder="Crie uma senha segura"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="confirmarSenha">Confirmar senha *</label>
+          <input
+            type="password"
+            id="confirmarSenha"
+            name="confirmarSenha"
+            required
+            placeholder="Repita sua senha"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="descricao">Descrição (opcional)</label>
+          <textarea
+            id="descricao"
+            name="descricao"
+            rows="3"
+            placeholder="Conte um pouco sobre você e seus interesses literários..."
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="aceitoTermos" required />
+            <span>Li e aceito os termos de uso da Rickoteca.</span>
+          </label>
+        </div>
+
+        <button type="submit" class="submit-btn">Criar conta</button>
+      </form>
+
+      <!-- Mensagem de sucesso (controlada pelo JS) -->
+      <div id="successMessage" class="success-message" role="status">
+        Conta criada com sucesso! Redirecionando para a Rickoteca...
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="../js/particles.js"></script>
+  <script src="../js/theme.js"></script>
+  <!-- Usa o mesmo JS de cadastro já existente no projeto -->
+  <script src="../js/cadastro.js"></script>
+  <script src="../js/accessibility.js"></script>
+</body>
+</html>

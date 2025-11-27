@@ -653,17 +653,23 @@ body {
   border: 2px solid rgba(0, 150, 255, 0.3);
 }
 
-
 .modal-author {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-muted);
 }
 
 .modal-description {
   line-height: 1.8;
   margin-bottom: 2rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-muted);
+}
+
+body.light .modal-author {
+  color: rgba(71, 85, 105, 0.95);
+}
+body.light .modal-description {
+  color: rgba(174, 186, 202, 0.9);
 }
 
 .download-btn {
@@ -754,7 +760,7 @@ body {
 
 .cadastro-title {
   font-size: 2.5rem;
-  color: #00d4ff;
+  color: hsl(190, 100%, 50%);
   margin-bottom: 0.5rem;
   text-align: center;
 }
@@ -778,7 +784,7 @@ body {
   border-radius: 999px;
   border: 2px solid rgba(0, 150, 255, 0.4);
   background: transparent;
-  color: rgba(255, 255, 255, 0.7);
+  color: hsl(190, 100%, 50%);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -850,7 +856,7 @@ body {
 .form-group input,
 .form-group textarea {
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(151, 151, 151, 0.05);
   border: 2px solid rgba(0, 150, 255, 0.3);
   border-radius: 12px;
   color: #ffffff;
@@ -869,7 +875,7 @@ body {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+ color: hsl(190, 100%, 50%);
 }
 
 .form-group textarea {
@@ -2026,4 +2032,62 @@ body .books-container {
 .comment-textarea::placeholder {
   color: var(--text-muted); /* em vez de branco transparente */
 }
+/* Botões "Onde comprar" e "Voltar" nas páginas de livros */
+.content .book-details .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  margin-right: 0.75rem;
+  margin-top: 0.75rem;
 
+  /* estilo do botão principal (Onde comprar) */
+  background: linear-gradient(135deg, #00d4ff, #0096ff);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 12px 30px rgba(0, 150, 255, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+              background 0.2s ease, color 0.2s ease;
+}
+
+.content .book-details .btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(0, 102, 255, 0.6);
+}
+
+/* Versão fantasma: "← Voltar para Mangás" */
+.content .book-details .btn.ghost {
+  background: transparent;
+  border: 2px solid rgba(0, 183, 255, 0.7);
+  color: #00b7ff;
+  box-shadow: none;
+}
+
+.content .book-details .btn.ghost:hover {
+  background: rgba(0, 183, 255, 0.08);
+}
+
+/* Ajuste pro tema claro */
+body.light .content .book-details .btn.ghost {
+  color: #0369a1;
+  border-color: rgba(37, 99, 235, 0.4);
+}
+
+body.light .content .book-details .btn.ghost:hover {
+  background: rgba(191, 219, 254, 0.6);
+}
+
+/* Centralizar os botões de categorias */
+.category-bar {
+  display: flex;
+  justify-content: center;  /* centraliza na horizontal */
+  align-items: center;
+  gap: 0.75rem;             /* espaço entre os botões */
+  flex-wrap: wrap;          /* quebra linha se não couber */
+  margin-top: 1.5rem;
+}

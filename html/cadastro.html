@@ -4,110 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha Conta - RICKOTECA</title>
+
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
-     <canvas id="particlesCanvas" class="particles-canvas"></canvas>
+    <canvas id="particlesCanvas" class="particles-canvas"></canvas>
 
     <header class="header">
         <div class="header-left">
-            <!-- Atualizando logo e nome do site -->
-            <img src="../imagem/icon/logo.png" alt="RICKOTECA Logo" class="logo-img">
+            <img src="../imagem/icon/logo.png" alt="Logotipo da RICKOTECA" class="logo-img">
             <h1 class="site-name">RICKOTECA</h1>
         </div>
-        <nav class="header-right">
+
+        <nav class="header-right" aria-label="Navegação principal">
             <a href="../index.html" class="nav-link">Home</a>
             <a href="../index.html#categorias" class="nav-link">Categorias</a>
             <a href="#" class="nav-link" data-page="sobre">Sobre</a>
             <a href="#" class="nav-link" data-page="contato">Contato</a>
-            <a href="cadastro.html" class="nav-link active">Log</a>
+            <a href="cadastro.html" class="nav-link active">Minha conta</a>
 
-            <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">🌞</button>
-
+            <button id="themeToggle"
+                    class="theme-toggle"
+                    aria-label="Alternar tema claro/escuro"
+                    title="Alternar tema">
+                🌞
+            </button>
         </nav>
     </header>
 
-    <!-- Formulário de Cadastro -->
+    <!-- Área principal: Login -->
     <main class="cadastro-container">
-        <div class="cadastro-card">
-           <h2 class="cadastro-title">Acesse sua conta</h2>
-            <p class="cadastro-subtitle">Entre com seus dados ou crie um perfil gratuitamente</p>
+        <div class="cadastro-card" role="form" aria-labelledby="titulo-login">
+            <h2 id="titulo-login" class="cadastro-title">Acesse sua conta</h2>
+            <p class="cadastro-subtitle">
+                Entre com seus dados ou
+                <a href="criar-conta.html" class="link-inline">crie um perfil gratuitamente</a>.
+            </p>
 
-            <div class="auth-tabs" role="tablist">
-                <button class="auth-tab active" data-auth-tab="login" role="tab" aria-selected="true">Entrar</button>
-                <button class="auth-tab" data-auth-tab="register" role="tab" aria-selected="false">Criar conta</button>
-            </div>
+            <section id="authMessages"
+                     class="auth-messages"
+                     aria-live="polite">
+            </section>
 
-            <section id="authMessages" class="auth-messages" aria-live="polite"></section>
-
-            <form id="loginForm" class="cadastro-form auth-form" novalidate>
+            <!-- Formulário de Login -->
+            <form id="loginForm"
+                  class="cadastro-form auth-form"
+                  novalidate
+                  autocomplete="on">
                 <div class="form-group">
                     <label for="loginEmail">E-mail *</label>
-                    <input type="email" id="loginEmail" name="loginEmail" required placeholder="seu@email.com">
+                    <input type="email"
+                           id="loginEmail"
+                           name="loginEmail"
+                           required
+                           autocomplete="email"
+                           placeholder="seu@email.com">
                 </div>
 
                 <div class="form-group">
                     <label for="loginPassword">Senha *</label>
-                    <input type="password" id="loginPassword" name="loginPassword" required placeholder="Digite sua senha">
+                    <input type="password"
+                           id="loginPassword"
+                           name="loginPassword"
+                           required
+                           autocomplete="current-password"
+                           placeholder="Digite sua senha">
                 </div>
 
                 <button type="submit" class="submit-btn">Entrar</button>
             </form>
 
-            <form id="registerForm" class="cadastro-form auth-form hidden" novalidate>
-                <div class="form-group">
-                    <label for="nome">Nome Completo *</label>
-                    <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">E-mail *</label>
-                    <input type="email" id="email" name="email" required placeholder="seu@email.com">
-                </div>
-
-                <div class="form-group">
-                    <label for="telefone">Telefone *</label>
-                    <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000">
-                </div>
-
-                <div class="form-group">
-                     <label for="senha">Senha *</label>
-                    <input type="password" id="senha" name="senha" required minlength="6" placeholder="Crie uma senha segura">
-                </div>
-
-                <div class="form-group">
-                    <label for="confirmarSenha">Confirmar senha *</label>
-                    <input type="password" id="confirmarSenha" name="confirmarSenha" required placeholder="Repita sua senha">
-                </div>
-
-                <div class="form-group">
-                    <label for="descricao">Descrição (opcional)</label>
-                   
-                    <textarea id="descricao" name="descricao" rows="4" placeholder="Conte-nos um pouco sobre você e seus interesses literários..."></textarea>
-                </div>
-
-            <button type="submit" class="submit-btn">Criar conta</button>
-            </form>
-
-             <div id="successMessage" class="success-message" role="status"></div>
+            <div id="successMessage"
+                 class="success-message"
+                 role="status"
+                 aria-live="polite">
+            </div>
         </div>
     </main>
-      <div id="contactModal" class="modal">
+
+    <!-- Modal de Contato -->
+    <div id="contactModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="contactTitle">
         <div class="modal-content contact-modal">
-            <span class="close-modal">&times;</span>
-            <h2>Entre em Contato com o Desenvolvedor</h2>
+            <button class="close-modal" aria-label="Fechar janela de contato">&times;</button>
+            <h2 id="contactTitle">Entre em contato com o desenvolvedor</h2>
             <div class="contact-options">
-                <a href="https://www.instagram.com/fernandinho_rick/" target="_blank" class="contact-option">
+                <a href="https://www.instagram.com/fernandinho_rick/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="contact-option">
                     <div class="contact-icon">📷</div>
                     <span>Instagram</span>
                 </a>
-                <a href="https://github.com/RickAmorimFH" class="contact-option">
+                <a href="https://github.com/RickAmorimFH"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="contact-option">
                     <div class="contact-icon">🐈‍⬛</div>
                     <span>GitHub</span>
                 </a>
-                <a href="https://wa.me/5562998699377" target="_blank" class="contact-option">
+                <a href="https://wa.me/5562998699377"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="contact-option">
                     <div class="contact-icon">💬</div>
                     <span>WhatsApp</span>
                 </a>
@@ -115,20 +115,20 @@
         </div>
     </div>
 
-    <div id="aboutModal" class="modal">
+    <!-- Modal Sobre -->
+    <div id="aboutModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="aboutTitle">
         <div class="modal-content about-modal">
-            <span class="close-modal">&times;</span>
-            <h2>Sobre a RICKOTECA</h2>
+            <button class="close-modal" aria-label="Fechar janela Sobre">&times;</button>
+            <h2 id="aboutTitle">Sobre a RICKOTECA</h2>
             <p>Bem-vindo à RICKOTECA! Aqui você encontra uma vasta coleção de livros de diversas categorias.</p>
             <p>Nossa missão é democratizar o acesso ao conhecimento e à cultura através da literatura digital.</p>
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="../js/particles.js"></script>
     <script src="../js/theme.js"></script>
-
     <script src="../js/cadastro.js"></script>
-    <!-- Adicionando script de acessibilidade -->
     <script src="../js/accessibility.js"></script>
 </body>
 </html>

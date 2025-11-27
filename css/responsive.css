@@ -208,3 +208,23 @@
     max-width: 1000px;
   }
 }
+
+/* Layout das categorias no mobile: barra rolável */
+@media (max-width: 768px) {
+  .category-bar {
+    justify-content: flex-start;   /* começa à esquerda */
+    flex-wrap: nowrap;             /* tudo em uma linha só */
+    overflow-x: auto;              /* rolagem horizontal */
+    padding: 0.5rem 1rem;
+    margin: 0 -1rem 1rem;          /* encosta nas bordas da tela */
+    scrollbar-width: none;         /* Firefox: some com a barra */
+  }
+
+  .category-bar::-webkit-scrollbar {
+    display: none;                 /* Chrome: some com a barra */
+  }
+
+  .category-btn {
+    flex: 0 0 auto;                /* cada botão mantém o tamanho */
+  }
+}
